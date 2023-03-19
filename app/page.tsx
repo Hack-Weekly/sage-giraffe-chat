@@ -23,7 +23,7 @@ export default function Home() {
 
           <a href="/required-session" className={styles.card}>
             <h2>Required Session &rarr;</h2>
-            <p>Get redirected if you don't have a session.</p>
+            <p>Get redirected if you don&apos;t have a session.</p>
           </a>
 
           <a href="/realtime" className={styles.card}>
