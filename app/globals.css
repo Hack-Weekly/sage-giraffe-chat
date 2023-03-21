@@ -1,6 +1,6 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
 
 html,
 body {
@@ -26,5 +26,53 @@ a {
   body {
     color: white;
     background: black;
+  }
+}
+
+@layer base {
+  h1 {
+    @apply text-5xl;
+  }
+  h2 {
+    @apply text-4xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  button {
+    @apply font-bold py-2.5 px-5 rounded-lg text-sm font-medium;
+  }
+
+  input {
+    @apply bg-slate-grey-800 outline-pumpkin rounded-lg py-2.5 px-5 transition-all
+  }
+}
+
+@layer components {
+  .primary-button {
+    @apply bg-pumpkin hover:bg-burnt-pumpkin transition-all;
+  }
+
+  .outlined-button {
+    @apply border border-pumpkin hover:bg-slate-grey-800 hover:text-white transition-all bg-opacity-0;
+  }
+
+  .text-button {
+    @apply text-white hover:bg-slate-grey-600 hover:text-white bg-slate-grey-800 transition-all
+  }
+
+  .body-1 {
+    @apply text-sm;
+  }
+
+  .body-2 {
+    @apply text-xs;
+  }
+
+  .text-overline {
+    @apply text-xxs;
   }
 }
