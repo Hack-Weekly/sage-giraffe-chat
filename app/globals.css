@@ -47,7 +47,11 @@ a {
   }
 
   input {
-    @apply bg-slate-grey-800 outline-pumpkin rounded-lg py-2.5 px-5 transition-all
+    @apply bg-slate-grey-800 outline-pumpkin text-sm rounded-lg py-2.5 px-5 transition-all
+  }
+
+  textarea {
+    @apply bg-slate-grey-800 outline-pumpkin text-sm rounded-lg py-2.5 px-5 resize
   }
 }
 
