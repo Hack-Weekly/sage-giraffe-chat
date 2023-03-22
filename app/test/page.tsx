@@ -4,6 +4,7 @@ import TextArea from "@/components/Controls/TextArea";
 import TextField from "@/components/Controls/TextField";
 import ChatHeader from "@/components/Layouts/ChatHeader";
 import SidebarLayout from "@/components/Layouts/SidebarLayout";
+import Message from "@/components/Misc/Message";
 import UserAvatar from "@/components/Misc/UserAvatar";
 import { useState } from "react";
 
@@ -57,6 +58,11 @@ const TestPage = ({}: Props) => {
           <UserAvatar status="Active" username="Username 1" />
           <UserAvatar status="Inactive" username="Username 2" />
           <UserAvatar status="Do not disturb" username="Username 3" />
+          <Message
+            timeStamp={new Date("2023-05-14T14:00:00.000Z")}
+            userName="Username 1"
+            messageText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor reiciendis debitis omnis sint explicabo corrupti rerum corporis aspernatur amet officiis esse dolores, sunt illo quis eum doloribus ullam tempora veniam!"
+          />
         </div>
       </SidebarLayout>
     </div>
