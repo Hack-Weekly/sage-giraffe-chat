@@ -1,19 +1,18 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { useSupabase } from "../../components/supabase-provider";
 
 import "./page.css";
 
-export default function Login() {
+export default function Register() {
   const { supabase, session } = useSupabase();
-
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
 
-  async function handleLogin(e: FormEvent<HTMLFormElement>) {
+  async function handleRegister(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    await supabase.auth.signInWithPassword({
+    await supabase.auth.signUp({
       email: mail,
       password: password,
     });
@@ -21,8 +20,8 @@ export default function Login() {
 
   return (
     <>
-      <form className="form" onSubmit={handleLogin}>
-        <h1 className="header">Login to live chat</h1>
+      <h1 className="header">Register to chat</h1>
+      <form className="form" method="post" onSubmit={handleRegister}>
         <div className="form-group">
           <label htmlFor="email">Email Address</label>
           <input
