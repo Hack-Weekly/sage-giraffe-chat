@@ -26,7 +26,7 @@ export default function Login() {
 
   const handleRegister = async () => {
     await supabase.auth.signUp({
-      email: "andresennils68@gmail.com",
+      email: "some@mail.com",
       password: "password",
     });
   };

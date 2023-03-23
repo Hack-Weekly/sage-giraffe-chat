@@ -13,15 +13,24 @@ module.exports = {
     colors: {
       'black': '#1E222E',
       'slate-grey': {
+        100: '#F5F7F9',
         400: '#70798C',
         600: '#444857',
-        800: '#313543'
+        700: '#2D303A',
+        800: '#313543',
       },
       'light-concrete': '#EFF2F4',
-      'pumpkin': '#D87334',
-      'burnt-pumpkin': '#9B432F',
+      'pumpkin': {
+        300: '#F9A03F',
+        'base': '#D87334', // 500
+        700: '#B55C2E',
+      },
+      'burnt-pumpkin': {
+        'base': '#9B432F', // 800
+      },
       'success': '#3B9C4A',
       'error': '#C71F1F',
+      'warning': '#d99a22',
       'white': '#fff',
     },
     fontSize: {
@@ -34,6 +43,9 @@ module.exports = {
       '3xl': '1.953rem',
       '4xl': '2.441rem',
       '5xl': '3.052rem',
+    },
+    extend: {
+
     }
   },
   plugins: [],
