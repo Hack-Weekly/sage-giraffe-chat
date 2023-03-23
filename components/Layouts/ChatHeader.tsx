@@ -1,9 +1,11 @@
-type Props = {};
+type Props = {
+  chatName: string;
+};
 
-const ChatHeader = ({}: Props) => {
+const ChatHeader = ({ chatName }: Props) => {
   return (
     <header className="sm:ml-64 h-20 fixed top-0 w-full left-0 flex py-5 px-10 bg-slate-grey-800">
-      <h3>Chat room 1</h3>
+      <h3>{chatName}</h3>
     </header>
   );
 };

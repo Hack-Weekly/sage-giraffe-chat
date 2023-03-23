@@ -16,7 +16,7 @@ const TestPage = ({}: Props) => {
   return (
     <div>
       <SidebarLayout>
-        <ChatHeader />
+        <ChatHeader chatName="Chat room 1" />
         <div className="flex flex-col gap-2">
           <h1>Header 1</h1>
           <h2>Header 3</h2>
