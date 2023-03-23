@@ -30,6 +30,11 @@ export default function Home() {
             <h2>Realtime &rarr;</h2>
             <p>Merge server and client state with realtime.</p>
           </a>
+
+          <a href="/login" className={styles.card}>
+            <h2>Login &rarr;</h2>
+            <p>Put in your details to login.</p>
+          </a>
         </div>
       </main>
 

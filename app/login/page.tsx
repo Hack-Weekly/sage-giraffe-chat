@@ -20,31 +20,29 @@ export default function Login() {
   }
 
   return (
-    <>
-      <form className="form" onSubmit={handleLogin}>
-        <h1 className="header">Login to live chat</h1>
-        <div className="form-group">
-          <label htmlFor="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            value={mail}
-            onChange={(e) => setMail(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </>
+    <div className="flex w-full h-screen justify-center items-center">
+        <form className="form p-16 bg-slate-grey-400 text-white rounded-lg" onSubmit={handleLogin}>
+            <h3 className='header text-center mb-3'>Login to live chat</h3>
+            <div className="form-group p-2">
+                <label className="block" htmlFor="name">Email Address</label>
+                <input className="w-full"
+                  type="email"
+                  id="email"
+                  value={mail}
+                  onChange={(e) => setMail(e.target.value)} />
+            </div>
+            <div className="form-group p-2">
+                <label className="block" htmlFor="password">Password</label>
+                <input className="w-full"
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)} />
+            </div>
+            <div className="form-group p-2">
+                <button type="submit" className="primary-button">Submit</button>
+            </div>
+        </form>
+    </div>
   );
 }
