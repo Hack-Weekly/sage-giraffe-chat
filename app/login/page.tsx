@@ -21,28 +21,43 @@ export default function Login() {
 
   return (
     <div className="flex w-full h-screen justify-center items-center">
-        <form className="form p-16 bg-slate-grey-400 text-white rounded-lg" onSubmit={handleLogin}>
-            <h3 className='header text-center mb-3'>Login to live chat</h3>
-            <div className="form-group p-2">
-                <label className="block" htmlFor="name">Email Address</label>
-                <input className="w-full"
-                  type="email"
-                  id="email"
-                  value={mail}
-                  onChange={(e) => setMail(e.target.value)} />
-            </div>
-            <div className="form-group p-2">
-                <label className="block" htmlFor="password">Password</label>
-                <input className="w-full"
-                  type="password"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)} />
-            </div>
-            <div className="form-group p-2">
-                <button type="submit" className="primary-button">Submit</button>
-            </div>
-        </form>
+      <form
+        className="form p-16 bg-slate-grey-400 text-white rounded-lg"
+        onSubmit={handleLogin}
+      >
+        <h3 className="header text-center mb-3">Login to live chat</h3>
+        <div className="form-group p-2">
+          <label className="block" htmlFor="name">
+            Email Address
+          </label>
+          <input
+            className="w-full"
+            type="email"
+            id="email"
+            autoComplete="email"
+            value={mail}
+            onChange={(e) => setMail(e.target.value)}
+          />
+        </div>
+        <div className="form-group p-2">
+          <label className="block" htmlFor="password">
+            Password
+          </label>
+          <input
+            className="w-full"
+            type="password"
+            autoComplete="current-password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="form-group p-2">
+          <button type="submit" className="primary-button w-full">
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
