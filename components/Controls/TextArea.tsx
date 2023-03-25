@@ -15,10 +15,10 @@ const TextArea = ({
 }: Props) => {
   const textAreaClasses = resizeable ? "resize" : "resize-none";
   return (
-    <div className="flex flex-col gap-0.5">
+    <div className="flex flex-col gap-0.5 h-full">
       {label && <label className="text-xs mb-0.5">{label}</label>}
       <textarea
-        className={textAreaClasses}
+        className={"h-full " + textAreaClasses}
         placeholder={placeholder}
         onChange={onChange}
         value={value}
