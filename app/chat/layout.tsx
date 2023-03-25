@@ -1,5 +1,3 @@
-import ChatHeader from "@/components/Layouts/ChatHeader";
-import Sidebar from "@/components/Layouts/Sidebar";
 import SidebarLayout from "@/components/Layouts/SidebarLayout";
 
 type Props = {

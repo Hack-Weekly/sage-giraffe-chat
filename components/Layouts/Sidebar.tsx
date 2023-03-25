@@ -2,11 +2,17 @@
 
 import { useRouter } from "next/navigation";
 import UserAvatar from "../Misc/UserAvatar";
+import { useSupabase } from "../supabase-provider";
 
 type Props = {};
 
 const Sidebar = ({}: Props) => {
+  const { supabase, session } = useSupabase();
   const router = useRouter();
+  async function handleSignOut() {
+    await supabase.auth.signOut();
+    router.push("/");
+  }
   return (
     <aside className="hidden sm:flex fixed top-0 left-0 z-40 w-64 p-6 bg-slate-grey-600 h-screen flex-col justify-between pb-20">
       <div className="flex flex-col gap-3">
@@ -43,7 +49,9 @@ const Sidebar = ({}: Props) => {
           <UserAvatar username="Username 3" status="Do not disturb" />
         </div>
       </div>
-      <button className="text-button">Log out</button>
+      <button onClick={handleSignOut} className="text-button">
+        Log out
+      </button>
     </aside>
   );
 };

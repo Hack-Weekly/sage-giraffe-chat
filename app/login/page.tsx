@@ -1,12 +1,14 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useSupabase } from "../../components/supabase-provider";
 
 import "./page.css";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
   const { supabase, session } = useSupabase();
+  const router = useRouter();
 
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,6 +20,12 @@ export default function Login() {
       password: password,
     });
   }
+
+  useEffect(() => {
+    if (session?.user) {
+      router.replace("/chat");
+    }
+  }, [session?.user]);
 
   return (
     <div className="flex w-full h-screen justify-center items-center">
@@ -52,9 +60,16 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="form-group p-2">
+        <div className="form-group p-2 flex flex-col gap-5">
           <button type="submit" className="primary-button w-full">
             Submit
+          </button>
+          <span className=" border-t-2 border-slate-grey-600 opacity-30"></span>
+          <button
+            onClick={() => router.push("/register")}
+            className="text-button"
+          >
+            New user? Register here
           </button>
         </div>
       </form>
