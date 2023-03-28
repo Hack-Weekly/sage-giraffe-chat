@@ -12,13 +12,18 @@ export default function Login() {
 
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState('')
 
-  async function handleLogin(e: FormEvent<HTMLFormElement>) {
+  function handleLogin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    await supabase.auth.signInWithPassword({
+    supabase.auth.signInWithPassword({
       email: mail,
       password: password,
-    });
+    }).then(result => {
+      if (result.error) {
+        setError(result.error.message)
+      }
+    })
   }
 
   useEffect(() => {
@@ -34,7 +39,12 @@ export default function Login() {
         onSubmit={handleLogin}
       >
         <h3 className="header text-center mb-3">Login to live chat</h3>
-        <div className="form-group p-2">
+        { error &&
+          <p className="text-error text-sm">
+            { error }
+          </p>
+        }
+        <div className="form-group my-2">
           <label className="block" htmlFor="name">
             Email Address
           </label>
@@ -47,7 +57,7 @@ export default function Login() {
             onChange={(e) => setMail(e.target.value)}
           />
         </div>
-        <div className="form-group p-2">
+        <div className="form-group my-2">
           <label className="block" htmlFor="password">
             Password
           </label>
@@ -60,11 +70,11 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="form-group p-2 flex flex-col gap-5">
+        <div className="form-group mt-6 flex flex-col gap-5">
           <button type="submit" className="primary-button w-full">
             Submit
           </button>
-          <span className=" border-t-2 border-slate-grey-600 opacity-30"></span>
+          <span className="border-t-2 border-slate-grey-600 opacity-30"></span>
           <button
             onClick={() => router.push("/register")}
             className="text-button"
